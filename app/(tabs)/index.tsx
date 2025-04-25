@@ -5,6 +5,7 @@ import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 import { Text } from '@/components/nativewindui/Text'
+import { ThemeToggle } from '@/components/nativewindui/ThemeToggle'
 export default function HomeScreen() {
   return (
     <ParallaxScrollView
@@ -17,7 +18,10 @@ export default function HomeScreen() {
       }
     >
       <ThemedView style={styles.titleContainer}>
-        <Text>Welcome!</Text>
+        <Text variant="largeTitle" className="text-red-500">
+          Welcome!
+        </Text>
+        <ThemeToggle />
         <HelloWave />
       </ThemedView>
       <ThemedView style={styles.stepContainer}>
