@@ -10,10 +10,13 @@ import * as SplashScreen from 'expo-splash-screen'
 import { StatusBar } from 'expo-status-bar'
 import { useEffect } from 'react'
 
-import { useColorScheme } from '@/hooks/useColorScheme'
+import { useColorScheme, useInitialAndroidBarSync } from '@/lib/useColorScheme'
+import { NAV_THEME } from '@/theme'
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync()
+
+useInitialAndroidBarSync()
 
 export default function RootLayout() {
   const colorScheme = useColorScheme()
@@ -32,7 +35,7 @@ export default function RootLayout() {
   }
 
   return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
+    <ThemeProvider value={NAV_THEME[colorScheme.colorScheme]}>
       <Stack>
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
         <Stack.Screen name="+not-found" />

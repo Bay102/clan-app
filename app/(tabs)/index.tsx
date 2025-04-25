@@ -4,7 +4,7 @@ import { HelloWave } from '@/components/HelloWave';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
-
+import { Text } from '@/components/nativewindui/Text'
 export default function HomeScreen() {
   return (
     <ParallaxScrollView
@@ -17,7 +17,7 @@ export default function HomeScreen() {
       }
     >
       <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Welcome!</ThemedText>
+        <Text>Welcome!</Text>
         <HelloWave />
       </ThemedView>
       <ThemedView style={styles.stepContainer}>
